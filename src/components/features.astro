@@ -1,0 +1,70 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+
+const features = [
+  {
+    title: "Fit Into Your Business Case",
+    description:
+      "Let Megalogic help you build your next app with custom solutions that fit your specific needs.",
+    icon: "bx:bxs-briefcase",
+  },
+  {
+    title: "100% Satisfaction Guaranteed",
+    description:
+      "At Megalogic, we are committed to your satisfaction. Our goal is to deliver solutions that meet your needs and exceed your expectations.",
+    icon: "bx:bx-check-shield",
+  },
+  {
+    title: "Customized Solutions On-Demand",
+    description:
+      "At Megalogic, we provide customized solutions to meet your unique needs.",
+    icon: "bx:bxs-data",
+  },
+  {
+    title: "Broad Integration",
+    description:
+      "Megalogic supports integration with other CRM, CMS, or any tools provided out there.",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "Extra Services",
+    description:
+      "Megalogic offers additional services to help you achieve your business goals. ",
+    icon: "bx:bxs-wrench",
+  },
+  {
+    title: "Experience the Advantage",
+    description:
+      "At Megalogic, we provide innovative and reliable solutions to help you achieve your business goals.",
+    icon: "bx:bxs-rocket",
+  },
+];
+---
+
+<div class="mt-16 md:mt-0" id="features">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Empower Your Digital Transformation with Megalogic
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    At Megalogic, we provide everything you need to accelerate your digital
+    transformation journey. From software development to digital strategy, we
+    have the expertise and tools to help you achieve your goals.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

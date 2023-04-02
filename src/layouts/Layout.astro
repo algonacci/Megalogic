@@ -1,0 +1,66 @@
+---
+import { SEO } from "astro-seo";
+import Footer from "@components/footer.astro";
+import Navbar from "@components/navbar/navbar.astro";
+import "@fontsource/inter/variable.css";
+
+export interface Props {
+  title: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+const resolvedImageWithDomain = new URL(
+  "/opengraph.jpg",
+  Astro.site
+).toString();
+
+const { title } = Astro.props;
+
+const makeTitle = title ? title + " | " + "Megalogic" : "Megalogic";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
+    <SEO
+      title={makeTitle}
+      description="Megalogic offers on-demand app built with the latest technologies to accelerate your online presence. Contact us today to learn more!"
+      canonical={canonicalURL}
+      twitter={{
+        creator: "@megalogic",
+        site: "@megalogic",
+        card: "summary_large_image",
+      }}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: "website",
+          title: `Megalogic - Accelerate Your Online Presence`,
+          image: resolvedImageWithDomain,
+        },
+        image: {
+          alt: "Megalogic Homepage Screenshot",
+        },
+      }}
+    />
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+    <style is:global>
+      /* Improve Page speed */
+      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+      img {
+        content-visibility: auto;
+      }
+    </style>
+  </body>
+</html>

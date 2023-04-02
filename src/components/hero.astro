@@ -1,0 +1,51 @@
+---
+import { Picture } from "@astrojs/image/components";
+import heroImage from "assets/working-in-office.svg";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon";
+---
+
+<main
+  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+  <div class="py-6 md:order-1 hidden md:block">
+    <Picture
+      src={heroImage}
+      alt="Astronaut in the air"
+      widths={[200, 400, 600]}
+      aspectRatio="4:3"
+      sizes="(max-width: 800px) 100vw, 620px"
+      loading="eager"
+      format="avif"
+    />
+  </div>
+  <div>
+    <h1
+      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
+      The Next Dream App, Powered by Megalogic
+    </h1>
+    <p class="text-lg mt-4 text-slate-600 max-w-xl">
+      Megalogic is the premier software house for startups, marketing websites,
+      and landing pages. Our team of experts can help you build a professional
+      and effective website to promote your brand and achieve your business
+      goals
+    </p>
+    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+      <Link
+        href="#features"
+        class="flex gap-1 items-center justify-center"
+        rel="noopener">
+        Get to know
+      </Link>
+      <!-- <Link
+        size="lg"
+        style="outline"
+        rel="noopener"
+        href="https://github.com/surjithctly/astroship"
+        class="flex gap-1 items-center justify-center"
+        target="_blank">
+        <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
+        GitHub Repo
+      </Link> -->
+    </div>
+  </div>
+</main>
