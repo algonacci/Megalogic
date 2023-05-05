@@ -25,11 +25,11 @@ const makeTitle = title ? title + " | " + "Megalogic" : "Megalogic";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
-    <SEO
+    <!-- <SEO
       title={makeTitle}
       description="Megalogic offers on-demand app built with the latest technologies to accelerate your online presence. Contact us today to learn more!"
       canonical={canonicalURL}
@@ -49,6 +49,42 @@ const makeTitle = title ? title + " | " + "Megalogic" : "Megalogic";
           alt: "Megalogic Homepage Screenshot",
         },
       }}
+    /> -->
+    <!-- Primary Meta Tags -->
+    <title>Megalogic - Accelerate Your Online Presence</title>
+    <meta name="title" content="Megalogic - Accelerate Your Online Presence" />
+    <meta
+      name="description"
+      content="Megalogic offers on-demand app built with the latest technologies to accelerate your online presence. Contact us today to learn more!"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.megalogic.id/" />
+    <meta
+      property="og:title"
+      content="Megalogic - Accelerate Your Online Presence"
+    />
+    <meta
+      property="og:description"
+      content="Megalogic offers on-demand app built with the latest technologies to accelerate your online presence. Contact us today to learn more!"
+    />
+    <meta property="og:image" content="https://megalogic.id/opengraph.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.megalogic.id/" />
+    <meta
+      property="twitter:title"
+      content="Megalogic - Accelerate Your Online Presence"
+    />
+    <meta
+      property="twitter:description"
+      content="Megalogic offers on-demand app built with the latest technologies to accelerate your online presence. Contact us today to learn more!"
+    />
+    <meta
+      property="twitter:image"
+      content="https://megalogic.id/opengraph.jpg"
     />
   </head>
   <body>
