@@ -1,0 +1,51 @@
+---
+const portfolioItems = [
+  {
+    name: "Terrafarms",
+    image_url: "/terrafarms.webp",
+    url: "https://terrafarms.id",
+  },
+  {
+    name: "SCOPPI",
+    image_url: "/SCOPPI.jpeg",
+    url: "https://scoppi.sukabumikota.go.id",
+  },
+  {
+    name: "Travens",
+    image_url: "/travens-web.png",
+    url: "https://travens.id",
+  },
+  // Add more portfolio items as needed
+];
+---
+
+<div class="mt-16 md:mt-0" id="portfolio">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-16">
+    Explore Our Portfolio
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    Check out some of our recent projects below.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-10 gap-16">
+  {
+    portfolioItems.map((item) => (
+      <div class="bg-white shadow-md p-4 rounded-lg">
+        <img
+          src={item.image_url}
+          alt={item.name}
+          class="w-full h-48 object-cover rounded-lg mb-4"
+        />
+        <h3 class="font-semibold text-lg mb-2">{item.name}</h3>
+        <a
+          href={item.url}
+          class="text-primary hover:underline"
+          target="_blank"
+          rel="noopener noreferrer">
+          View Project
+        </a>
+      </div>
+    ))
+  }
+</div>
