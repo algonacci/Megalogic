@@ -8,7 +8,7 @@ image:
     alt: "data structures & algorithms",
   }
 publishDate: "2022-11-09 16:39"
-category: "Courses"
+category: "Tutorials"
 author: "Soni Wakwaw"
 tags: [webdev, tailwindcss, frontend]
 ---

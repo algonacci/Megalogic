@@ -5,23 +5,23 @@ import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
+  // {
+  //   title: "Features",
+  //   path: "#",
+  //   children: [
+  //     { title: "Frontend", path: "#" },
+  //     { title: "Backend", path: "#" },
+  //     { title: "Mobile", path: "#" },
+  //     { title: "Wordpress", path: "#" },
+  //   ],
+  // },
   {
-    title: "Features",
-    path: "#",
-    children: [
-      { title: "Frontend", path: "#" },
-      { title: "Backend", path: "#" },
-      { title: "Mobile", path: "#" },
-      { title: "Wordpress", path: "#" },
-    ],
+    title: "About",
+    path: "/about",
   },
   {
     title: "Pricing",
     path: "/pricing",
-  },
-  {
-    title: "About",
-    path: "/about",
   },
   {
     title: "Blog",
@@ -42,7 +42,7 @@ const menuitems = [
           <!-- <span class="font-bold text-slate-800">Mega</span><span
             class="text-slate-500">logic</span
           > -->
-          <img src="./logo.svg" alt="Megalogic" width="50" />
+          <img src="/logo.svg" alt="Megalogic" width="50" />
         </a>
         <div class="block lg:hidden">
           <MenuIcon class="w-4 h-4 text-gray-800" />
