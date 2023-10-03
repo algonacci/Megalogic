@@ -5,7 +5,7 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://megalogic.vercel.app",
+  site: "https://megalogic.id",
   integrations: [
     tailwind(),
     image({
