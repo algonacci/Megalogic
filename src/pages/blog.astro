@@ -5,15 +5,34 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 
-// Filter blog entries with 'draft: false' & date before current date
-const publishedBlogEntries = await getCollection("blog", ({ data }) => {
-  return !data.draft && data.publishDate < new Date();
+const allEntries = await getCollection("blog");
+console.log("System Time:", new Date().getTime());
+
+// Offset untuk UTC+7 dalam milidetik (7 jam * 60 menit * 60 detik * 1000 milidetik)
+const offset = 7 * 60 * 60 * 1000;
+
+const publishedBlogEntries = allEntries.filter(({ data }) => {
+  return (
+    !data.draft &&
+    new Date(data.publishDate).getTime() < new Date().getTime()
+  );
 });
 
-// Sort content entries by publication date
-publishedBlogEntries.sort(function (a, b) {
-  return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
+console.log("Filtered Entries:", publishedBlogEntries);
+
+publishedBlogEntries.sort((a, b) => {
+  return (
+    new Date(b.data.publishDate).getTime() -
+    new Date(a.data.publishDate).getTime()
+  );
 });
+
+console.log("System Time:", new Date(1696350535336).toISOString());
+allEntries.forEach(entry => {
+  console.log("Publish Date:", entry.data.publishDate);
+  console.log("Calculated Publish Date:", new Date(entry.data.publishDate).getTime() + offset);
+});
+
 ---
 
 <Layout title="Blog">
@@ -61,8 +80,12 @@ publishedBlogEntries.sort(function (a, b) {
                       <span class="text-gray-400">• </span>
                       <time
                         class="text-gray-400"
-                        datetime={blogPostEntry.data.publishDate.toISOString()}>
-                        {blogPostEntry.data.publishDate.toDateString()}
+                        datetime={new Date(
+                          blogPostEntry.data.publishDate,
+                        ).toISOString()}>
+                        {new Date(
+                          blogPostEntry.data.publishDate,
+                        ).toDateString()}
                       </time>
                     </div>
                   </div>
