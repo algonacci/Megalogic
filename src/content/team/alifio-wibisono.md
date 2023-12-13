@@ -1,7 +1,7 @@
 ---
 draft: false
 name: "Alifio Wibisono"
-title: "Graphic Designer"
+title: "Marketing Officer"
 avatar:
   {
     src: "https://raw.githubusercontent.com/algonacci/Free-CDN/main/alifio.png",
