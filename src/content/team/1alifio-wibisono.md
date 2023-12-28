@@ -1,7 +1,7 @@
 ---
 draft: false
 name: "Alifio Wibisono"
-title: "Marketing Officer"
+title: "Chief Marketing Officer"
 avatar:
   {
     src: "https://raw.githubusercontent.com/algonacci/Free-CDN/main/alifio.png",
