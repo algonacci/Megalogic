@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 name: "Eric Julianto"
 title: "Director"
 avatar:
