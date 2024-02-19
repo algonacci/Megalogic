@@ -9,7 +9,7 @@ image:
   }
 publishDate: "2023-10-03 13:35"
 category: "UMKM"
-author: "Eric Julianto"
+author: "Denis Setiawan"
 tags: [umkm, website development]
 ---
 
